@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -34,4 +35,33 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:4.6.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.6.0"
+
+    //Cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //RView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.6.2"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.2"
+
+    //RxJAva
+    implementation 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //LifeCycle - ViewModelProviders
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // dagger
+    kapt 'com.google.dagger:dagger-compiler:2.17'
+    implementation 'com.google.dagger:dagger-android:2.15'
+    implementation 'com.google.dagger:dagger-android-support:2.15'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.16'
+    implementation("io.coil-kt:coil:0.6.1")
 }
