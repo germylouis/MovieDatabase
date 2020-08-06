@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="score">Movie Score: %d</string>
+    <string name="img_description">Image of Movie Poster</string>
 </resources>
