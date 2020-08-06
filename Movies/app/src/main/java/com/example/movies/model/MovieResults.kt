@@ -1,30 +1,18 @@
-
 package com.example.movies.model
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 data class MovieResults(
-    var adult: Boolean? = null,
-    var backdropPath: String? = null,
-    var belongsToCollection: Any? = null,
-    var budget: Int? = null,
-    var genres: List<Genre>? = null,
-    var homepage: String? = null,
-    var id: Int? = null,
-    var imdbId: String? = null,
-    var originalLanguage: String? = null,
-    var originalTitle: String? = null,
-    var overview: String? = null,
-    var popularity: Double? = null,
-    var posterPath: String? = null,
-    var productionCompanies: List<ProductionCompany>? = null,
-    var productionCountries: List<ProductionCountry>? = null,
-    var releaseDate: String? = null,
-    var revenue: Int? = null,
-    var runtime: Int? = null,
-    var spokenLanguages: List<SpokenLanguage>? = null,
-    var status: String? = null,
-    var tagline: String? = null,
-    var title: String? = null,
-    var video: Boolean? = null,
-    var voteAverage: Double? = null,
-    var voteCount: Int? = null
+    @SerializedName("page")
+    @Expose
+    var page: Int,
+    @SerializedName("total_results")
+    @Expose
+    var totalResults: Int,
+    @SerializedName("total_pages")
+    @Expose
+    var totalPages: Int,
+    @SerializedName("results")
+    @Expose var results: List<Result>
 )
