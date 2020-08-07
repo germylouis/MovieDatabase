@@ -77,8 +77,6 @@ class MainActivity : AppCompatActivity(), MovieListAdapter.MyClickListener {
                 .commit()
         }
     }
-
-
 }
 
 

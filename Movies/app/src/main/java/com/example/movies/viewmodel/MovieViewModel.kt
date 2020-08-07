@@ -31,6 +31,4 @@ class MovieViewModel(private val mRepository: MovieRepository) : ViewModel() {
         super.onCleared()
         compositeDisposable.dispose()
     }
-
-
 }

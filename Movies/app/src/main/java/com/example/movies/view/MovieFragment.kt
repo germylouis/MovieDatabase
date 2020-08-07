@@ -36,6 +36,4 @@ class MovieFragment : Fragment() {
             .load(IMG_BASE_URL + movie?.posterPath)
             .into(view.fragment_poster)
     }
-
-
 }

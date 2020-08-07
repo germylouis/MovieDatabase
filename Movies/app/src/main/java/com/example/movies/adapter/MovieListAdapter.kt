@@ -14,7 +14,6 @@ import com.example.movies.util.Constants.IMG_BASE_URL
 class MovieListAdapter(private var myClickListener: MyClickListener) :
     RecyclerView.Adapter<MovieListAdapter.MovieListHolder>() {
 
-
     var movieList: List<Result> = ArrayList()
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -24,7 +23,6 @@ class MovieListAdapter(private var myClickListener: MyClickListener) :
 
         return MovieListHolder(view, movieList, myClickListener)
     }
-
 
     override fun onBindViewHolder(holder: MovieListHolder, position: Int) {
         holder.movieName.text = movieList[position].originalTitle
