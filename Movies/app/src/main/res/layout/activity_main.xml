@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
@@ -17,14 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_margin="16dp"
-        android:background="@null"
+        android:background="@color/yt"
         android:imeOptions="actionSearch"
         android:importantForAutofill="no"
         android:inputType="text|textAutoComplete|textPostalAddress|textEmailAddress"

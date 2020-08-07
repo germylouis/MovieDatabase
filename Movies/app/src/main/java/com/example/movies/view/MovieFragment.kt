@@ -28,14 +28,13 @@ class MovieFragment : Fragment() {
         val movie = bundle?.getParcelable<Result>("movie")
 
         view.fragment_title.text = movie?.title
-        view.fragment_score.text = movie?.voteAverage.toString()
+        view.fragment_lang.text = movie?.originalLanguage
         view.fragment_date.text = movie?.releaseDate
         view.fragment_description.text = movie?.overview
 
         Glide.with(view.context.applicationContext)
             .load(IMG_BASE_URL + movie?.posterPath)
             .into(view.fragment_poster)
-
     }
 
 

@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Movies</string>
-    <string name="score">Movie Score: %d</string>
+    <string name="app_name">Movie Database</string>
+    <string name="lang">Original Language:</string>
     <string name="img_description">Image of Movie Poster</string>
+    <string name="title">Title:</string>
+    <string name="score">Rating:</string>
+    <string name="date">Release Date:</string>
+    <string name="overview_text">Overview:</string>
 </resources>

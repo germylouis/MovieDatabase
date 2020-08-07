@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), MovieListAdapter.MyClickListener {
+
     private var movieList: List<Result> = ArrayList()
     private var movieFragment: MovieFragment = MovieFragment()
 

@@ -28,8 +28,7 @@ class MovieListAdapter(private var myClickListener: MyClickListener) :
 
     override fun onBindViewHolder(holder: MovieListHolder, position: Int) {
         holder.movieName.text = movieList[position].originalTitle
-        holder.movieScore.text = movieList[position].popularity.toString()
-        holder.releaseDate.text = movieList[position].releaseDate
+        holder.movieScore.text = movieList[position].voteAverage.toString()
 
         Glide.with(holder.itemView.context)
             .load(IMG_BASE_URL + movieList[position].posterPath)
@@ -50,7 +49,6 @@ class MovieListAdapter(private var myClickListener: MyClickListener) :
         var movieName: TextView = itemView.findViewById(R.id.movieName)
         var movieImg: ImageView = itemView.findViewById(R.id.movieImg)
         var movieScore: TextView = itemView.findViewById(R.id.movieScore)
-        var releaseDate: TextView = itemView.findViewById(R.id.releaseDate)
 
         init {
             itemView.setOnClickListener(this)
