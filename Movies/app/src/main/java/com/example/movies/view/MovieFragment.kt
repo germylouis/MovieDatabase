@@ -1,6 +1,7 @@
 package com.example.movies.view
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.example.movies.model.Result
 import com.example.movies.util.Constants.IMG_BASE_URL
 import kotlinx.android.synthetic.main.movie_fragment.view.*
 
+
 class MovieFragment : Fragment() {
 
     override fun onCreateView(
@@ -18,6 +20,7 @@ class MovieFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        retainInstance = true
         return inflater.inflate(R.layout.movie_fragment, container, false)
     }
 
@@ -31,6 +34,8 @@ class MovieFragment : Fragment() {
         view.fragment_lang.text = movie?.originalLanguage
         view.fragment_date.text = movie?.releaseDate
         view.fragment_description.text = movie?.overview
+        view.fragment_description.movementMethod
+        view.fragment_description.movementMethod = ScrollingMovementMethod()
 
         Glide.with(view.context.applicationContext)
             .load(IMG_BASE_URL + movie?.posterPath)

@@ -21,24 +21,24 @@ class MainActivity : AppCompatActivity(), MovieListAdapter.MyClickListener {
 
     private var movieList: List<Result> = ArrayList()
     private var movieFragment: MovieFragment = MovieFragment()
-
+    private  lateinit var movieBun : Bundle
     private lateinit var mSearchText: SearchView
     private lateinit var viewModel: MovieViewModel
     private lateinit var rView: RecyclerView
     private lateinit var mAdapter: MovieListAdapter
     private lateinit var resultObserver: Observer<Boolean>
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        movieBun = Bundle()
         rView = rv
         mSearchText = search
         viewModel =
             ViewModelProvider(this, VMFactory(MovieRepository())).get(MovieViewModel::class.java)
         mAdapter = MovieListAdapter(this)
         populateList()
-
     }
 
     private fun populateList() {
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), MovieListAdapter.MyClickListener {
     }
 
     override fun onClick(result: Result) {
-        val movieBun = Bundle()
+
         val fm: FragmentManager = supportFragmentManager
         movieBun.putParcelable("movie", result)
         movieFragment.arguments = movieBun
@@ -77,6 +77,12 @@ class MainActivity : AppCompatActivity(), MovieListAdapter.MyClickListener {
                 .commit()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putAll(movieBun)
+    }
+
 }
 
 
